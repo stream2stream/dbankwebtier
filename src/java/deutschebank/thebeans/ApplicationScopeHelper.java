@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Selvyn
+ * @author Sel
  */
 public class ApplicationScopeHelper
 {
@@ -33,7 +33,7 @@ public class ApplicationScopeHelper
     {
         this.itsInfo = itsInfo;
     }
-    
+
     public  boolean    bootstrapDBConnection()
     {
         boolean result = false;
@@ -45,22 +45,22 @@ public class ApplicationScopeHelper
 
             Properties pp;
             pp = pLoader.getPropValues( "dbConnector.properties" );
-            
+
             result = itsConnector.connect( pp );
-        } 
+        }
         catch (IOException ex)
         {
             Logger.getLogger(ApplicationScopeHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return result;
     }
-    
+
     public User userLogin( String userId, String userPwd )
     {
         User theUser = null;
         UserHandler theUserHandler = UserHandler.getLoader();
-            
+
         theUser = theUserHandler.loadFromDB(itsConnector.getConnection(), userId, userPwd );
 
         if( theUser != null )
