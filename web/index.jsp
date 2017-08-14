@@ -25,7 +25,7 @@
             
             if( connectionStatus )
             {
-                dbStatus = "Sel, you have successfully connected the Deutsche Bank server";
+                dbStatus = "Selvyn, you have successfully connected the Deutsche Bank server";
             }
         %>
         <h2><%= dbStatus %></h2>
